@@ -2,21 +2,27 @@ name: ci
 
 env:
   OS: ubuntu-latest
+  JOBNAME: ci
 
 on:
   workflow_dispatch
 
 jobs:
   ci:
-    runs-on: ${{ env.OS }}
+    env:
+      osci: ${{ env.OS }}
+    runs-on: ubuntu-latest
     steps:
-    - uses: docker-practice/actions-setup-docker@master
-    - run: |
-        set -x
-        docker version
-        docker run --rm hello-world
-        docker ps
-        echo ${{ env.OS }}
+    - name: test env.os
+      run: echo env.OS - ${{ env.OS }}
+    - name: test job.ci.env.osci
+      run: echo env.OS - ${{ job.ci.env.osci }}
+        
+#    - uses: docker-practice/actions-setup-docker@master
+#        docker version
+#        docker run --rm hello-world
+#        docker ps
+
 
 # # This is a basic workflow to help you get started with Actions
 
