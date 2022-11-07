@@ -1,5 +1,8 @@
 name: ci
 
+env:
+  OS: ubuntu-latest
+
 on:
   workflow_dispatch
 
@@ -13,6 +16,7 @@ jobs:
         docker version
         docker run --rm hello-world
         docker ps
+        echo ${{ env.OS }}
 
 # # This is a basic workflow to help you get started with Actions
 
