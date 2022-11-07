@@ -8,7 +8,7 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: ${{ env.OS }}
     steps:
     - uses: docker-practice/actions-setup-docker@master
     - run: |
