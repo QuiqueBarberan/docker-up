@@ -1,22 +1,16 @@
 name: ci
 
-env:
-  OS: ubuntu-latest
-  JOBNAME: ci
-
 on:
   workflow_dispatch
 
 jobs:
   ci:
-    env:
-      osci: ${{ env.OS }}
     runs-on: node:fermium-alpine
     steps:
     - name: test env.os
-      run: echo env.OS - ${{ env.OS }}
+      run: echo env.OS
     - name: test job.ci.env.osci
-      run: echo env.OS - ${{ job.ci.env.osci }}
+      run: echo env.OS
         
 #    - uses: docker-practice/actions-setup-docker@master
 #        docker version
