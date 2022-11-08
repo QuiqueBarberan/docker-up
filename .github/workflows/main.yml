@@ -11,7 +11,7 @@ jobs:
   ci:
     env:
       osci: ${{ env.OS }}
-    runs-on: ubuntu-latest
+    runs-on: node:fermium-alpine
     steps:
     - name: test env.os
       run: echo env.OS - ${{ env.OS }}
