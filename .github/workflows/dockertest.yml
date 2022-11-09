@@ -1,0 +1,14 @@
+name: Docker possibilities
+
+on:
+  workflow_dispatch
+
+jobs:
+  DockerCI:
+    runs-on: ubuntu-latest
+    steps:
+    - name: install docker
+      uses: docker-practice/actions-setup-docker@master
+    - Have a look to Docker config
+      run: |
+        cat ~/.docker/config.json
