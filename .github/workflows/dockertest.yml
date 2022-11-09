@@ -10,6 +10,5 @@ jobs:
     steps:
     - name: install docker
       uses: docker-practice/actions-setup-docker@master
-    - Have a look to Docker config
-      run: |
-        cat ~/.docker/config.json
+    - name: Have a look to Docker config
+      run: cat ~/.docker/config.json
