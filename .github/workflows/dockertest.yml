@@ -1,4 +1,5 @@
 name: Docker possibilities
+run-name: Docker possibilities
 
 on:
   workflow_dispatch
