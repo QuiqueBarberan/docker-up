@@ -6,7 +6,7 @@ on:
 jobs:
     README:
         name: README
-        runs-on: ubuntu-latest
+        runs-on: [self-hosted]
         steps:
           - name: Check out the repo
             uses: actions/checkout@v2
